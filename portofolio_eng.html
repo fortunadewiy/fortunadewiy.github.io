@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dewi Fortuna — Data Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F6F3;
+    --card:#FFFFFF;
+    --ink:#1A2333;
+    --ink-soft:#5C6779;
+    --line:#E5E3DC;
+    --navy:#1F3A5F;
+    --navy-deep:#152840;
+    --brass:#A6813F;
+    --shadow: 0 1px 2px rgba(26,35,51,0.04), 0 8px 24px rgba(26,35,51,0.06);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+  }
+  .wrap{max-width:780px;margin:0 auto;padding:0 28px;}
+  a{color:var(--navy); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* HEADER */
+  header{
+    padding:64px 0 44px;
+    position:relative;
+  }
+  .mark{
+    width:52px;height:52px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Source Serif 4',serif;
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:26px;
+  }
+  .eyebrow{
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:12px;
+  }
+  h1{
+    font-family:'Source Serif 4',serif;
+    font-size:clamp(34px,5.2vw,46px);
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0 0 18px;
+    color:var(--ink);
+  }
+  .intro{
+    font-size:16.5px;
+    color:var(--ink-soft);
+    max-width:580px;
+    margin:0 0 30px;
+  }
+  .intro strong{color:var(--ink); font-weight:600;}
+  .btn-row{display:flex; flex-wrap:wrap; gap:12px;}
+  .btn{
+    display:inline-block;
+    font-size:13.5px;
+    font-weight:600;
+    padding:12px 22px;
+    border-radius:3px;
+    text-decoration:none;
+    letter-spacing:.01em;
+  }
+  .btn-primary{background:var(--navy); color:#fff;}
+  .btn-primary:hover{background:var(--navy-deep); text-decoration:none;}
+  .btn-secondary{background:transparent; color:var(--ink); border:1px solid var(--line);}
+  .btn-secondary:hover{border-color:var(--navy); color:var(--navy); text-decoration:none;}
+
+  header::after{
+    content:"";
+    display:block;
+    width:100%;
+    height:1px;
+    background:linear-gradient(90deg, var(--navy) 0 40px, var(--line) 40px 100%);
+    margin-top:44px;
+  }
+
+  /* SECTIONS */
+  section{padding:50px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-label{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:8px;
+  }
+  h2{
+    font-family:'Source Serif 4',serif;
+    font-size:24px;
+    font-weight:600;
+    margin:0 0 30px;
+    color:var(--ink);
+  }
+
+  /* PROJECT CARDS */
+  .project{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:28px 30px;
+    margin-bottom:20px;
+    box-shadow:var(--shadow);
+  }
+  .project-head{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;
+    margin-bottom:11px;
+  }
+  .project h3{
+    font-family:'Source Serif 4',serif;
+    font-size:19px;
+    font-weight:600;
+    margin:0;
+    color:var(--ink);
+  }
+  .badge{
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.03em;
+    padding:4px 11px;
+    border-radius:20px;
+    white-space:nowrap;
+    background:var(--navy);
+    color:#fff;
+  }
+  .project p.desc{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+    max-width:600px;
+  }
+  .tags{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:18px;}
+  .tag{
+    font-size:11.5px;
+    padding:4px 11px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:20px;
+    color:var(--ink-soft);
+  }
+  .project-links{display:flex; gap:10px; flex-wrap:wrap;}
+  .project-links a{
+    font-size:13px;
+    font-weight:600;
+    padding:9px 16px;
+    border-radius:3px;
+    border:1px solid var(--line);
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .project-links a:hover{border-color:var(--navy); color:var(--navy); text-decoration:none;}
+  .project-links a.demo{background:var(--navy); color:#fff; border-color:var(--navy);}
+  .project-links a.demo:hover{background:var(--navy-deep); color:#fff;}
+
+  .note{
+    font-size:12.5px;
+    color:#8A6A2E;
+    background:#FAF4E8;
+    border-radius:4px;
+    padding:8px 14px;
+    margin-top:14px;
+    display:inline-block;
+  }
+
+  .upcoming{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:3px solid var(--brass);
+    border-radius:4px;
+    padding:20px 24px;
+  }
+  .upcoming strong{color:var(--ink);}
+
+  footer{
+    padding:36px 0 60px;
+    border-top:1px solid var(--line);
+    font-size:13px;
+    color:var(--ink-soft);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+  footer a{color:var(--ink-soft);}
+  footer a:hover{color:var(--navy);}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="mark">DF</div>
+    <div class="eyebrow">Portfolio</div>
+    <h1>Dewi Fortuna</h1>
+    <p class="intro">
+      <strong>Data Scientist</strong> specializing in biology and life sciences, currently building
+      general experience across industries. I bring a research-driven approach — hypothesis testing,
+      experimental rigor, and attention to data accuracy — into machine learning, RAG systems, and
+      predictive analytics. BNSP Certified Associate Data Scientist.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="mailto:fortunadewiy@gmail.com">Email me</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/fortunadewiy/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-secondary" href="https://github.com/fortunadewiy" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-label">Selected Work</div>
+    <h2>Projects</h2>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>BioFlow AI — Bioinformatics Workflow Copilot</h3>
+        <span class="badge">Live demo</span>
+      </div>
+      <p class="desc">
+        A Retrieval-Augmented Generation research assistant that helps students and junior researchers
+        choose the right bioinformatics tools and workflows, grounded in a curated, indexed knowledge
+        base rather than an LLM's best guess.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">FAISS</span>
+        <span class="tag">Groq · Llama 3.3 70B</span><span class="tag">HuggingFace Embeddings</span><span class="tag">Streamlit</span>
+      </div>
+      <div class="project-links">
+        <a class="demo" href="https://bioflowai.streamlit.app/" target="_blank" rel="noopener">Try live demo</a>
+        <a href="https://github.com/fortunadewiy/BioFlowAI_BioinformaticsWorkflow" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Bank Customer Churn Prediction</h3>
+        <span class="badge">Live demo</span>
+      </div>
+      <p class="desc">
+        A classification model that predicts which bank customers are likely to churn, optimized for
+        F1-score and AUC-ROC using GridSearchCV with 5-fold cross-validation — helping business teams
+        target retention strategies more effectively.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">Artificial Neural Network</span>
+        <span class="tag">Scikit-learn</span><span class="tag">GridSearchCV</span><span class="tag">Streamlit</span>
+      </div>
+      <div class="project-links">
+        <a class="demo" href="https://bankcustomerchurnprediction-dewi.streamlit.app/" target="_blank" rel="noopener">Try live demo</a>
+        <a href="https://github.com/fortunadewiy/BankCustomerChurnPrediction" target="_blank" rel="noopener">View code</a>
+      </div>
+      <div class="note">Note: full documentation for this repo is in progress.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Insurance Cost Prediction App</h3>
+      </div>
+      <p class="desc">
+        An application that estimates individual insurance costs based on factors such as age, BMI,
+        smoking habits, and region — built as an end-to-end regression case study, from raw data to
+        an interactive app.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">Regression Modeling</span><span class="tag">Streamlit</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/fortunadewiy/insuranceApp" target="_blank" rel="noopener">View code</a>
+      </div>
+      <div class="note">Note: full documentation for this repo is in progress.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="upcoming">
+      <strong>Coming soon —</strong> Employee Salary Prediction: Ridge Regression &amp; Random Forest
+      models with an anti-leakage pipeline design and complete methodology documentation. Repository
+      link will be added soon.
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Dewi Fortuna</span>
+    <span><a href="https://github.com/fortunadewiy" target="_blank" rel="noopener">github.com/fortunadewiy</a></span>
+  </footer>
+
+</div>
+
+</body>
+</html>
